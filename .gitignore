@@ -1,3 +1,4 @@
+*.pyc
 /.idea
 /venv
 /runs
@@ -5,6 +6,8 @@
 *.pt
 *.pth
 *.cache
-*.pyc
+
 *.pkl
 *.avi
+*.pyc
+*.pkl
