@@ -6,8 +6,5 @@
 *.pt
 *.pth
 *.cache
-
 *.pkl
 *.avi
-*.pyc
-*.pkl
