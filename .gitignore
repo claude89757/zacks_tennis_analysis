@@ -1,6 +1,10 @@
 /.idea
 /venv
 /runs
+/tracker_stubs
 *.pt
 *.pth
 *.cache
+*.pyc
+*.pkl
+*.avi
