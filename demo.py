@@ -21,7 +21,7 @@ from mini_court import MiniCourt
 # test
 if __name__ == "__main__":
     # Read Video
-    input_video_path = "input_videos/input_video.mp4"
+    input_video_path = "input_videos/zxw_001.mp4"
     video_frames = read_video(input_video_path)
 
     # init mini_court
@@ -45,6 +45,8 @@ if __name__ == "__main__":
 
     # Filter players
     player_detections = player_tracker.choose_and_filter_players(court_key_points, player_detections)
+    for player in player_detections:
+        print(player)
 
     # Detect ball hit frame
     ball_shot_frames = ball_tracker.get_ball_shot_frames(ball_detections)

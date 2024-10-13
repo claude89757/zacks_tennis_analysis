@@ -209,11 +209,24 @@ class MiniCourt():
                 closest_key_point = (original_court_key_points[closest_key_point_index*2], 
                                      original_court_key_points[closest_key_point_index*2+1])
 
-                # Get Player height in pixels
-                frame_index_min = max(0, frame_num-20)
-                frame_index_max = min(len(player_boxes), frame_num+50)
-                bboxes_heights_in_pixels = [get_height_of_bbox(player_boxes[i][player_id]) for i in range (frame_index_min,frame_index_max)]
-                max_player_height_in_pixels = max(bboxes_heights_in_pixels)
+                # # Get Player height in pixels
+                # frame_index_min = max(0, frame_num-20)
+                # frame_index_max = min(len(player_boxes), frame_num+50)
+                # bboxes_heights_in_pixels = [get_height_of_bbox(player_boxes[i][player_id]) for i in range (frame_index_min,frame_index_max)]
+                # max_player_height_in_pixels = max(bboxes_heights_in_pixels)
+
+                # (fix) Get Player height in pixels
+                frame_index_min = max(0, frame_num - 20)
+                frame_index_max = min(len(player_boxes), frame_num + 50)
+                bboxes_heights_in_pixels = []
+                for i in range(frame_index_min, frame_index_max):
+                    bbox = player_boxes[i].get(player_id)
+                    if bbox is not None:
+                        bboxes_heights_in_pixels.append(get_height_of_bbox(bbox))
+                if bboxes_heights_in_pixels:
+                    max_player_height_in_pixels = max(bboxes_heights_in_pixels)
+                else:
+                    max_player_height_in_pixels = 0  # 或者其他适当的默认值
 
                 mini_court_player_position = self.get_mini_court_coordinates(foot_position,
                                                                             closest_key_point, 

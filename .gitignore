@@ -8,3 +8,8 @@
 *.cache
 *.pkl
 *.avi
+*.mp4
+test_*
+*.log
+*.png
+*.ipg

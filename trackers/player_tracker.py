@@ -62,12 +62,15 @@ class PlayerTracker:
 
         player_dict = {}
         for box in results.boxes:
-            track_id = int(box.id.tolist()[0])
-            result = box.xyxy.tolist()[0]
-            object_cls_id = box.cls.tolist()[0]
-            object_cls_name = id_name_dict[object_cls_id]
-            if object_cls_name == "person":
-                player_dict[track_id] = result
+            try:
+                track_id = int(box.id.tolist()[0])
+                result = box.xyxy.tolist()[0]
+                object_cls_id = box.cls.tolist()[0]
+                object_cls_name = id_name_dict[object_cls_id]
+                if object_cls_name == "person":
+                    player_dict[track_id] = result
+            except Exception as error:
+                print(error)
         
         return player_dict
 
