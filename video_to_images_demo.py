@@ -63,11 +63,7 @@ def process_video_by_ai(input_video_path: str):
     print(f"video_frames: {len(video_frames)}")
     # Detect players and ball
     player_tracker = PlayerTracker(model_path='yolov8x.pt')
-    player_detections = player_tracker.detect_frames(video_frames,
-                                                     read_from_stub=False,
-                                                     stub_path="/Users/xiezengtian/Documents/UGit/"
-                                                               "zacks_tennis_analysis"
-                                                               "/tracker_stubs/player_detections.pkl")
+    player_detections = player_tracker.detect_frames(video_frames)
 
     # draw players bounding boxes
     output_video_frames = player_tracker.draw_bboxes(video_frames=video_frames, player_detections=player_detections)
