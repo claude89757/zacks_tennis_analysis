@@ -81,7 +81,7 @@ def process_video_by_ai(input_video_path: str):
             cv2.putText(frame, f"Frame: {i}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     # Save image
-    image_path = f"/Users/xiezengtian/Desktop/{input_video_name}"
+    image_path = f"/tmp/{input_video_name}"
     output_image_path = save_video_to_images_with_sampling(output_video_frames, image_path,
                                                            max_box_frame_id, num_samples=10, target_size_kb=800)
     print("save image successfully")
