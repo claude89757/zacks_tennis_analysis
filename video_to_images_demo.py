@@ -102,5 +102,5 @@ if __name__ == "__main__":
     pass
     # input_video_name = "67_1723086456_raw"
     # # Read Video
-    # input_video_path = f"input_videos/{input_video_name}.mp4"
-    # process_video_by_ai(input_video_path)
+    input_video_path = f"input_videos/input_video.mp4"
+    process_video_by_ai(input_video_path)
