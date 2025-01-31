@@ -34,7 +34,7 @@ def calculate_width(box: list):
 
 def find_frame_id_with_max_box(player_detections: list):
     """
-    找到bounding box面积最大的帧
+    找到bounding box面积最大的帧 (找到box的宽度最大的帧)
     :param player_detections: 每一帧的bounding box数据，格式为 [{1: [x1, y1, x2, y2]}, ...]
     :return: 面积最大的帧号
     """
